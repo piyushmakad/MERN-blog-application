@@ -1,0 +1,1 @@
+Nodemon - package is used to update server without restarting
