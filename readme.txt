@@ -17,3 +17,15 @@ in Index.js, we are importing router and to use , we want to use app.use() metho
 
 Express is a node js web application framework that provides broad features for building web and mobile applications. 
 It is used to build a single page, multipage, and hybrid web application. It's a layer built on the top of the Node js that helps manage servers and routes.
+
+
+Now, we create a auth.controller which authenicate our signup field, signup will be a async function means we have 
+to store values and it take time so without going in event loop ,it can run in background
+we are destructing the contents from req.body which we send.we are encrypting our password so no one can see 
+using bcryptjs lib ..Creating a newUser and saving using Try catch block so if error occur it can be shown on web
+
+signup function is again imported in auth.route to create to route  is used to define a route for handling HTTP POST requests.
+HTTP POST requests are commonly used to submit data to a server, often to create or update a resource.
+
+The app.use(express.json()) middleware is used to parse incoming request bodies with JSON payloads in an Express.js application.TO access,we convert incoming
+json into Js objects (here, req.body is converted into js object by express)
