@@ -4,6 +4,7 @@ MongoDB is NoSQL db management system.
 mongoose.connect is used to connect to server and in password,@ is special keyword so if we want to use @ => %40 is used inplace 
 
 .env file is used to hide important info like password which we dont want to share on GITHUB . npm i dotenv 
+-------------------------------------------------------------------------------------------
 
 UserSchema is created in model which defines how our user schema is. and what require fields are stored...
 
@@ -18,7 +19,7 @@ in Index.js, we are importing router and to use , we want to use app.use() metho
 Express is a node js web application framework that provides broad features for building web and mobile applications. 
 It is used to build a single page, multipage, and hybrid web application. It's a layer built on the top of the Node js that helps manage servers and routes.
 
-
+----------------------------------------------------------------------------------------
 Now, we create a auth.controller which authenicate our signup field, signup will be a async function means we have 
 to store values and it take time so without going in event loop ,it can run in background
 we are destructing the contents from req.body which we send.we are encrypting our password so no one can see 
@@ -29,3 +30,15 @@ HTTP POST requests are commonly used to submit data to a server, often to create
 
 The app.use(express.json()) middleware is used to parse incoming request bodies with JSON payloads in an Express.js application.TO access,we convert incoming
 json into Js objects (here, req.body is converted into js object by express)
+-------------------------------------------------------------------------------------------------------------
+
+In app, we are using a middleware to show error (err,req,res,next) . where we get statusCode = err.statusCode || 500 meaning if undetified error
+then set it 500.same for message.response.status will give status of code and convert it into json to show on web
+
+We are making error.js to handle middleware function where exporting errorHandler
+and creating error from Error class which can find statusCode and message as parameter given and returning error
+
+In authController, we are rather than showing status in catch, we are just passing error to next
+where handling can be done(in index.js)
+
+--------------------------------------------------------------------------------------------------------------
