@@ -61,3 +61,14 @@ If the response is successful (res.ok), navigates the user to the sign-in page.
 
 --------------------------------------------------------------------
 
+Now, we are making a signin route where we are confirming signin.
+in try block, we are using await function for gettinf info from User.findOne({email}) which is checking email from MongoDB
+now we are checking validPassowrd by comparing hashvalue of saved passowrd in db from password we are signing in
+then we are generting a sign in token which can be saced in cookie and then we are asiding password from rest of data using validUser._doc
+now we are sending response with status and cookie 
+
+bcryptjs: Used for comparing hashed passwords.
+jsonwebtoken: Used for generating access tokens.
+
+--------------------------------------------------------------------
+
