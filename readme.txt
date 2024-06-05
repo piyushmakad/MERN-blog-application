@@ -42,3 +42,22 @@ In authController, we are rather than showing status in catch, we are just passi
 where handling can be done(in index.js)
 
 --------------------------------------------------------------------------------------------------------------
+
+Today, we are updating SignUp page . In vite.config.js, we have to change our server as api is on localhost:3000 so
+server : { here proxy is defined and when we get '/api' then set target to http://localhost:3000 from previous and as it is http which is not secure so secure is false}
+
+Now,we are providing functionality to sign up form. 
+State Variables -  formData: Holds the current state of the form data.
+                   errorMessage: Stores any error messages to be displayed to the user.
+                   loading: Indicates whether a signup request is in progress.
+
+we have handleChange function which  any change in input understands.
+handleSubmit is an async funtcion means it takes sometimes to update data in db.
+Sends a POST request(used to submit data) to the /api/auth/signup endpoint with the form data.
+Processes the server response:
+If data.success is false, sets the error message.
+If the response is successful (res.ok), navigates the user to the sign-in page.
+
+
+--------------------------------------------------------------------
+
