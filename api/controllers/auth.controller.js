@@ -48,7 +48,7 @@ export const signin = async (req, res, next) => {
 
       next(errorHandler(404, "User not found"));
     }
-    
+
     // console.log("User found:", validUser);
     // console.log("Stored password hash:", validUser.password);
     // console.log("Entered password:", password);
@@ -59,7 +59,6 @@ export const signin = async (req, res, next) => {
       next(errorHandler(400, "Invalid password"));
     }
 
-    
     const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
 
     const { password: pass, ...rest } = validUser._doc;

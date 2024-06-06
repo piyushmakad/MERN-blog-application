@@ -71,4 +71,22 @@ bcryptjs: Used for comparing hashed passwords.
 jsonwebtoken: Used for generating access tokens.
 
 --------------------------------------------------------------------
+Now we created our SignIn page and to handle state globally,we used Redux toolkit.we first create a store
+which store info and reducers.
+A userSlice.js is created in which initial state and userSlice is defined. createSlice takes 3 things: name,initialState,and actions to be performed
+signInStart initials the currentState, success - takes state and action where action is dispatched when success sigi in but payload stores inforamtion
+which action passes.
+Now userSlice.reducer will be used by store.js and userSlice.actions are the reducer functionality which we used in our componenets.
 
+Action Creators: Extracted and exported to be used for dispatching actions related to user sign-in.
+Reducer: Exported as the default export to be included in the Redux store configuration.
+
+In Sign In ,we are handling state using globally 
+API Request: Sends a POST request to /api/auth/signin with the formData in the request body.
+Response Handling:
+            Parses the response as JSON.(as formData is jsObject ,we need to parse this as json to web)
+            If the success field in the response is false, dispatches signInFailure with the error message from the response.
+            If the request is successful (res.ok), dispatches signInSuccess with the response data 
+            and navigates to the home page ('/').
+
+--------------------------------------------------------------------------------------------------------------------
