@@ -22,7 +22,6 @@ function SignIn() {
     e.preventDefault();
     if(!formData.email || !formData.password){
       return dispatch(signInFailure('Please Fill Out All Details'));
-
     }
     try {
       dispatch(signInStart());
@@ -34,15 +33,16 @@ function SignIn() {
 
       const data = await res.json();
       if(data.success === false){
-        return dispatch(signInFailure(data.message));
+        dispatch(signInFailure(data.message));
       }
       if(res.ok){
         dispatch(signInSuccess(data));
         navigate('/');
       }
     } catch (error) {
-      dispatch(signInFailure(data.message));
+      dispatch(signInFailure(error.message));
     }
+    
   };
   return (
     <div className="min-h-screen mt-20">

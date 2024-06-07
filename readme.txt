@@ -90,3 +90,16 @@ Response Handling:
             and navigates to the home page ('/').
 
 --------------------------------------------------------------------------------------------------------------------
+To save the sign in state locally in storage,we use redux-persist
+combineReducers are used to combine no. of reducers in a single root.Configuring persist object 
+where key = root ,storage which is imported from redux-persist and version 1.Now we are Creating
+a persistedReducer which take persistConfig and root reducer as arguments -- 
+           persistReducer: Enhances the root reducer to automatically persist and rehydrate the state.
+
+we are configuring store with reducer and middleware if any eroor happens to handle efficiently.Then export store using
+persistStore -- Creates a persistor object which controls the persistence behavior. 
+
+PersistGate is a component provided by redux-persist that delays the rendering of your app's UI 
+until the persisted state has been retrieved and rehydrated
+
+-----------------------------------------------------------------
