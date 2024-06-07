@@ -103,3 +103,13 @@ PersistGate is a component provided by redux-persist that delays the rendering o
 until the persisted state has been retrieved and rehydrated
 
 -----------------------------------------------------------------
+Now we need to create Google Authentication so first firebase is installed with default config and export the app.
+we create an const auth to getAuth(app) .here GoogleAuthProvider()  creates GoogleAuth instance.SetcustomPararmeter is used to
+select from prompt only select_account option. SignInWithPopUp() creates a pop up windows.
+await res.json(): The response object (res) has a method .json() that returns a promise. This promise resolves with the result of 
+parsing the response body text as JSON.
+
+In AuthController,we are defining gooleRoute and export const googleAuht method in controller which is an async function. If block is checking whether user is found .If not 
+then, we generate a randomPassowrd from no. and alphabets.Now a hashpassword of generatedPassword is created .Then new User is created with username based on name and no.
+email,hashpassword,photoUrl,etc .Then await is called for newUSer to be saved in db .Then token is created , password  is removed from rest to show in web .then catch block is
+created
