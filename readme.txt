@@ -112,4 +112,15 @@ parsing the response body text as JSON.
 In AuthController,we are defining gooleRoute and export const googleAuht method in controller which is an async function. If block is checking whether user is found .If not 
 then, we generate a randomPassowrd from no. and alphabets.Now a hashpassword of generatedPassword is created .Then new User is created with username based on name and no.
 email,hashpassword,photoUrl,etc .Then await is called for newUSer to be saved in db .Then token is created , password  is removed from rest to show in web .then catch block is
-created
+created.
+
+--------------------------------------------------------------------------------------------------------------------------
+we have now created functionality for theme and dropdown when sign in to show profile info.In Header,
+We use dropdown to show a dropdown menu with label as avator photo. In this,a dropdown.header is used which show username,email.
+After that a link is assigned when clicked to Profile and Sign Out.
+
+Now for Theme, a themeSlice is created with toggleTheme function and THemeProvider which provides a theme on toggle functionality.We can
+access theme globally using redux where {children} prop is renedered inside a div element which takes theme as argument and apply
+styles to it.Here, {children} is like App.js in main.
+
+-----------------------------------------------------------------
