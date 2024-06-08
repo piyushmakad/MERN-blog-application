@@ -124,3 +124,7 @@ access theme globally using redux where {children} prop is renedered inside a di
 styles to it.Here, {children} is like App.js in main.
 
 -----------------------------------------------------------------
+
+A PrivateRoute is created where we are getting currentUser and if currentUser is not null then we move to its children which is present 
+int <Outlet/> else we Navigate to sign-in page. So dashboard be remained private.
+Now made the DashSideBar and DashProfile pages.
