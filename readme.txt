@@ -128,3 +128,19 @@ styles to it.Here, {children} is like App.js in main.
 A PrivateRoute is created where we are getting currentUser and if currentUser is not null then we move to its children which is present 
 int <Outlet/> else we Navigate to sign-in page. So dashboard be remained private.
 Now made the DashSideBar and DashProfile pages.
+Now we are working on upload Image and updating it.We are importing firebase/storage to upload images. fileRef is refernece to file input element.
+handleImageChange() is used to set selected image and create a url of image before uploading it. a useEffect is used which trigger when change in imageFile.
+Now UploadImage is an async function because it takes time to upload image so without blocking main stack ,we use async function .We access storage configured in app in firebase.js.
+A new filename every time we import a file is being created .
+
+               const storageRef= ref(storage, filename) --- ref : Creates a reference to the location in the Firebase Storage where the file will be stored. 
+                                                                  The ref function constructs a reference using the storage service and the generated filename. Mtlb storage ek directory h jha files rahegi
+
+Upload Task is used to upload the imageFile at storageRef . In uploadTask.on , snapshot contains inforamtion about upload progess and if error occurs,we chnage the states.
+If upload successfully, then we download using arrow function where we getDownloadUrl -: Retrieves the download URL of the uploaded file and updates the imageFileUrl state with this URL.
+In form, ref={fileRef}: Uses a reference to the file input element, allowing it to be programmatically clicked. (when we click div of image,this ref helps )
+
+fileRef.current.click(): This line programmatically triggers a click event on the hidden file input element. Since fileRef.current refers to the <input> element, 
+calling click() on it opens the file selection dialog as if the user had clicked on the input directly.
+
+----------------------------------------------------------------------------------------------------------------------
