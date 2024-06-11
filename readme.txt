@@ -144,3 +144,13 @@ fileRef.current.click(): This line programmatically triggers a click event on th
 calling click() on it opens the file selection dialog as if the user had clicked on the input directly.
 
 ----------------------------------------------------------------------------------------------------------------------
+Today,we are making updateUser info functionality. First, we need to whether user is verified or not using cookie stored in browser.
+verifyToken() is middleware function which first verify user..Token is get from req.cookies.access_token ( a_t is name we given while saving cookie in browser).
+Now we check whether token exist or not and then verify token using JWT_SECRET key we saved in .env file .if token verified then attach user info from token into
+req.user to pass in api route as request the next() proceed to next middleware function which is updateUser .
+
+UpdateUser() - now we check id from verifyToken with userID from request URL .if matches then we proceed.Now passowrd and username error handling takes place
+After that, to update user in db, we throw it in try catch  block, function User.findByIdAndUpdate( it takes userId from URL ) then set only specfied fields 
+while excluding password to show in api message or while inspecting.
+
+----------------------------------------------------------------------------------------------------------------------------
