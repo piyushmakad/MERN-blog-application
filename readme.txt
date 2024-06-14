@@ -154,3 +154,14 @@ After that, to update user in db, we throw it in try catch  block, function User
 while excluding password to show in api message or while inspecting.
 
 ----------------------------------------------------------------------------------------------------------------------------
+Today,we have done Update button functionality for DashProfile.
+in userslice, made reducers like updateFailure,updateStart,updateSuccess, etc.When we change any field like username,profilepic,etc . we have to get formdata as well as updatedinfo So 
+we made handleChange().
+handleSubmit() is async function for form when we click on update button.Here,we check conditions lile Object.keys(formData).length === 0 means no properites is present in formData.
+imageFileUploading is piece of State if uploading so setUpdateUserError. Now use try and catch block for routing.  we make a req which fetch data into response with currenUserid
+we get data from res.json() into javascript object..If res is not ok ,dispatch(failure).
+Show some alert at end of form componenet with success or failure.
+
+(Note - this update functionality only works for sign up without using GoogleAuth.In GoogleAuth,we cant change email,pass,username).
+
+-----------------------------------------------------------------------------------------------------------------------------
