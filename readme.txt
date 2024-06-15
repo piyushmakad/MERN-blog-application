@@ -165,3 +165,12 @@ Show some alert at end of form componenet with success or failure.
 (Note - this update functionality only works for sign up without using GoogleAuth.In GoogleAuth,we cant change email,pass,username).
 
 -----------------------------------------------------------------------------------------------------------------------------
+Today,We are creating delete User route with router.delete and verifyToken deleteUser middleware.
+In user.controller, deleteUser is an async function which first check req.user.id with id from url. and after that, just try and catch block statement.
+In user slice ,we have created delete reducers.
+In DashProfile,some Modal componenet is used for frontend while on click shows a popup windows.
+handleDeleteUser works onClick the delete user span and only works when Yes,I am sure.
+first it dispatch(deleteUserStart reducer) and res is fetched from api .After try block with method : "Delete" and no need of headers required.
+json() is used to parse a JSON-string formatted response into js object for further use.
+
+------------------------------------------------------------------------------------------------------------------------------
