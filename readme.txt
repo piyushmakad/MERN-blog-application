@@ -174,3 +174,17 @@ first it dispatch(deleteUserStart reducer) and res is fetched from api .After tr
 json() is used to parse a JSON-string formatted response into js object for further use.
 
 ------------------------------------------------------------------------------------------------------------------------------
+Today,we are creating CreatePost interface when the user is admin.For rich text editor,we use
+ReactQuill lib.We are using <form> to create form with functionalities provided by flowbite.
+we use select,textinput,fileinput,button etc for styling our page.
+
+For our Create-post Api, we create post.controller.js , post.model.js and post.route.js.
+In postModel, we define schema of the post.fields that are required,things that it will store,etc.
+In postroute,we first make a router using express then provide a '/create' post request which take verifyToken
+and create functiona as middleware function.
+In post.controller,first we import post model and errorHandler.We create a async function .
+we check if req user is admin then we proceed.Now we check if req body contains title or content.
+then we create a slug,its like a url friendly version of post title.Now we create a post using new Post.
+then we save post using try catch block.
+
+---------------------------------------------------------------------------------------------------------
