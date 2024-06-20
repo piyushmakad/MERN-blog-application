@@ -188,3 +188,27 @@ then we create a slug,its like a url friendly version of post title.Now we creat
 then we save post using try catch block.
 
 ---------------------------------------------------------------------------------------------------------
+
+Today, we are creating a DashPosts for sidebar where we show posts if user is Admin.
+In post controller,we create a get request to get the post present in DB.getPosts method is async function.
+we get startIndex ,limit , sorting direction from req.query which then parse into Integer.
+Now we are constructing query object:- here conditional filters are added to query object if userId is provided
+or category or slug ,etc .for searchTerm, it uses a regular expression to perform a case-insensitive search for 
+both title and content.
+we sort posts on bases of updatedTime we can skip no of documents if want but its 0 currently
+and we can limit how many posts to show
+we can count totalPosts using Post.countDocuments
+now we calculate date one month ago from today and we count post created in last month
+which usesa a filter by createdAt .
+then we send response with status and json contains array of post,total posts and lastmonth posts. 
+$gte - greater than or equal To.
+
+Now, we create frontend for DashPosts. useEffects() runs the fetch logic when components starts or mounts or 'id' changes.
+fetchPosts() is async function which call getPost api based on currentUser._id.
+Now response is converted into json for js objects to use.and setPosts if res is oK.
+The table is only rendered if currentUser.isAdmin is true and userPosts is not empty.
+userPosts.map iterates over each post in userPosts.
+Each post is rendered in a Table.Body and Table.Row.
+
+--------------------------------------------------------------------------------------------------
+
