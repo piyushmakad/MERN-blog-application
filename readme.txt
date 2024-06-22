@@ -212,3 +212,27 @@ Each post is rendered in a Table.Body and Table.Row.
 
 --------------------------------------------------------------------------------------------------
 
+Today, we are completing showMore button functionality for DashPosts.we use state function to set
+showMore functionality and click event listener on show More button.It fetches data with currentUser._id
+and startIndex when length of post > 9 it will work.
+
+DeletePost functionlity :-  we create two state variable showModal which controls modal dialog box when click on delete button and 
+                            postIdtoDelete which stores post to be deleted. when user click on delete button, showModal becomes true
+                            and postIdtoDelete stores post._id. Then HandleDeletePost is responsible for deleting the post which first
+                            fetch data from api and if res is ok filters out the deleted post.
+
+delelepost api :- it check if user is admin or id of user (req.user.id) matches the userId parameter from the request URL. Then we findPostByid and delete
+                  which matches postId from request URL.
+
+UpdatePost:- The UpdatePost component allows users to update an existing post. It includes functionalities for fetching the post details, uploading a new image
+             , editing the post content, and submitting the updated post.
+             useParams is use to populate postId from URL.useEffect is called whenever there is change in postId or when componenet mounts.
+             handleSubmit is used to upadate the post using put request.
+
+updatepost api:- to update the post, we check is user is Admin or userid is equal to id from request url.It ensures only Admin or user itself can update the post.
+                 Post.findByIdAndUpdate(req.params.postId, {...}, { new: true }):
+                 req.params.postId: The ID of the post to be updated, extracted from the request parameters.
+                 The $set operator is used to update the fields (title, content, category, image) with the new values provided in the request body (req.body).
+                { new: true }: This option ensures that the function returns the updated document. 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
