@@ -235,4 +235,8 @@ updatepost api:- to update the post, we check is user is Admin or userid is equa
                  The $set operator is used to update the fields (title, content, category, image) with the new values provided in the request body (req.body).
                 { new: true }: This option ensures that the function returns the updated document. 
 
+
+Now, completed the DashUser which is similar to DashPosts where we get users,delete them and delete api 
+route is made..
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
