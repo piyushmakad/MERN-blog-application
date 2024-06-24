@@ -240,3 +240,11 @@ Now, completed the DashUser which is similar to DashPosts where we get users,del
 route is made..
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Today,we worked on PostPage page funcitonality.useParams is used to access URL paramteter.
+we rendered fetchPost everyTime when postSlug changes or component mounts.Simply we getPosts wth given slug
+which is array so we want first element which is post.After that is tailwind css and componenets.
+Now, a CallToAction componenet renders at the end in which we show image in right side and heading,paragraph
+on left side with button.
+
+--------------------------------------------------------------------------------------------------------------
