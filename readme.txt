@@ -247,4 +247,19 @@ which is array so we want first element which is post.After that is tailwind css
 Now, a CallToAction componenet renders at the end in which we show image in right side and heading,paragraph
 on left side with button.
 
+Now we are making ScrollToTop componenet which whenever our we redirected then it always show the new page from Top.
+for the comment Section, we are making comment Api and model.Comment Model :- the schema stores content,userid,likes by users stored in array,
+noOflikes,etc. 
+In CommentROute, we creating a post request for creating comment with verifyUser. 
+In createComment function, we are extracting content,postID,userId from req body and some condition checks. Then we create new comment with postId content userid
+then save the comment in DB.This new comment goes back to client as response.
+
+In frontend CommentSection.jsx,
+we are using a handleSubmit function for form where we preventDefault submit then try catch.It makes a post request to server
+with body sending three things content: comment, currentUser._id, postId from props.
+Gets data as response .
+
+The component conditionally renders different UI elements based on whether the user is signed in (currentUser exists).
+If signed in, it shows the user's information (profile picture, username) and the comment form. If not signed in, it prompts the user to sign in with a 
+link to the sign-in page.
 --------------------------------------------------------------------------------------------------------------
