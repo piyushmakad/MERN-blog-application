@@ -263,3 +263,17 @@ The component conditionally renders different UI elements based on whether the u
 If signed in, it shows the user's information (profile picture, username) and the comment form. If not signed in, it prompts the user to sign in with a 
 link to the sign-in page.
 --------------------------------------------------------------------------------------------------------------
+For Getting comments we are creating a api route, getPostComments based on postId.
+finding comment by if postId === postId from url.
+To show which user commented we can get user based on userId from comment.
+In user route, getUserForComment() function is passed in which we get user by findById of userId
+and get all details except password and parse the response as json().
+
+In CommentSection, we are getting all the comments through getComments function used in useEffect 
+which renders when postId changes. we get comments from api with postId and if res is ok set the 
+data with all the comments posted on the post (it may have different users).
+Then  Comment componenet takes place when mapping comments.
+In Comment, we are fetching getUser from api based on userId present in comment which we are passing 
+as props in Comment componenet.fetching data and showing.
+
+--------------------------------------------------------------------------------------------------------------
