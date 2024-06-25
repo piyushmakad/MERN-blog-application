@@ -276,4 +276,16 @@ Then  Comment componenet takes place when mapping comments.
 In Comment, we are fetching getUser from api based on userId present in comment which we are passing 
 as props in Comment componenet.fetching data and showing.
 
+Now, we are working on like functionality.So route is defined as likeComment with verifyToken based on 
+commentId.So first we check if commentId from params is present in DB.Then we check if user.id present in comment
+or not in likes array.If not found then increase no. of likes and push user.id in likes array.then we save the comment
+and parse it as json.In put,post req,we have to save.
+
+In CommentSection, we are providing like functionality where In HandleLike based on commentId (means konsi comment Id par kam karna h)
+If not currentUser(means not logged in) then send to sign in page.Then we send like/unlike req based on commentId
+Now updates the comments state by mapping exisiting comments array.Now we check if `_id` matches the commentId of like/unliked comment.
+matches then creates a new comment object with updated info.otherwise comment remain unchanged.
+We are passing onLike as props with function handleLike.
+In Comment componenet, we are using a button for like/unlike then a onLike function take place onClicking.
+
 --------------------------------------------------------------------------------------------------------------
