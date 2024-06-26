@@ -289,3 +289,26 @@ We are passing onLike as props with function handleLike.
 In Comment componenet, we are using a button for like/unlike then a onLike function take place onClicking.
 
 --------------------------------------------------------------------------------------------------------------
+
+Today, we are working on Edit and Delete funcitonality of Comment.
+First we create Api route for Edit and Delete. Based on commentId we edit or delete.In editComment, first we find Comment
+then check if userId of comment is equal to userId of signed in user to edot the comment.After we update the comment and changes only content.
+In deleteComment. we first find Comment then check if userId of comment is equal to signed in user or user is Admin.then we delete the comment.
+
+In CommentSection, we define showModal to show visibility of Modal and commentTOdelete to store the commentId to delete.
+In handleEdit, used to handle edit of comment .It takes two arguments first Comment (which to comment to edit) and EditedContent( new edited content to store).
+In handleDelete, It takes commentId as argument,first we not showing the Modal then in Try we search if user logged in then we create delete response and if res 
+is ok then we get data and setComments( remove that comment which id is equal to commentId)
+At end , it renders each comment if present then apply another componenet Comment which takes functions like onLike,onDelete,onEdit.
+onDelete is prop passed to Comment with commentId. When the delete action is triggered within the Comment component, 
+this function is executed with the commentId of the comment to be deleted.
+(mtlb jo Delete button h Comment component me. toh onClick pe onDelete kam karega.jo comment._id ko as an argument dega . onDelete function use karra hu jiski functionality CommentSection me likhi)
+
+
+In Comment, editedContent: To store the edited content of the comment.
+            isEditing: To toggle between view and edit mode.
+            handleEdit: Enable edit mode and set the initial value of the editedContent.
+            handleSave: Save the edited comment by making a PUT request to the API, and update the parent component through onEdit
+            Delete Button: Render if the current user is the author or an admin, calls onDelete with the comment's _id.
+
+---------------------------------------------------------------------------------------------------------------------------
