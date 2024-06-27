@@ -312,3 +312,17 @@ In Comment, editedContent: To store the edited content of the comment.
             Delete Button: Render if the current user is the author or an admin, calls onDelete with the comment's _id.
 
 ---------------------------------------------------------------------------------------------------------------------------
+
+Now,we are working on read Artciles component where it shows recent posts.We can use useEffect 
+one time to fetch recent posts limit to 2.And use a PostCard componenet while mapping each post.
+In postCard componenet, in outer div:- group: Allows styling of child elements on hover.
+                                       relative: Sets the position to relative(child jo absolue position pe h usko div k anusar relatively chnage kar dega postition)
+                        
+                        in img:- object-cover: Ensures the image covers the entire area.
+
+                        in read article:- z-10: Sets the z-index to 10 to position the element above others
+                                          group-hover:bottom-0: Moves the button to the bottom of the container on hover.
+                                          (When an element is positioned absolute, it is removed from the normal document flow and positioned relative to 
+                                          the nearest positioned ancestor)
+
+----------------------------------------------------------------------------------------------------------------------
