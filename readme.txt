@@ -342,4 +342,20 @@ JSX Rendering :- Render a main container div with a flex layout.
 
                 Include buttons to navigate to detailed views for each section.
 
+Now,completed Home Page functionality mostly work on frontend using div and all.
+
 ---------------------------------------------------------------------------------------------------
+
+Today, we work on search funcitonality of Header componenet. In this,useLocation is used to get the current URL path.
+pathLocation contains the entire location object with various properties. location: Holds just the path string (/search).
+In handleSubmit, we prevent any default value to save. in urlParams,we save only term after search.Now we set 'searchTerm' to searchTerm.
+This searchTerm is gain from search button. And then we convert it into a string so that we can use to navigate to page.
+
+Now in SearchPage, we have object which contains info about sort , category and searchTerm.In useEffect, we have full location of url
+containing parameters.Then we get things from urlParams like sort,searchTerm,etc and set the data if we have anychanges get from url.
+then we use async function to get searchQuery and get data through api route based on these things and after that we call fetchPosts 
+and whenever our location.search changes.useEffect again re renders.
+handleShowMore fetches more posts and appends them to the existing list.
+Uses the current number of posts as the startIndex for pagination.
+
+--------------------------------------------------------------------------------------------------------------------
