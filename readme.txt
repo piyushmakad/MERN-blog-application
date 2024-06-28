@@ -342,4 +342,6 @@ JSX Rendering :- Render a main container div with a flex layout.
 
                 Include buttons to navigate to detailed views for each section.
 
+Now,completed Home Page functionality mostly work on frontend using div and all.
+
 ---------------------------------------------------------------------------------------------------
