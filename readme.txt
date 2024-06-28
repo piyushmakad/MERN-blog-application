@@ -326,3 +326,8 @@ In postCard componenet, in outer div:- group: Allows styling of child elements o
                                           the nearest positioned ancestor)
 
 ----------------------------------------------------------------------------------------------------------------------
+
+Today,Made DashComments to show all the comments to the admin which is similar to 
+how DashUser componenet is.And made api route for getComments.
+
+---------------------------------------------------------------------------------------------------
