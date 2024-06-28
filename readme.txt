@@ -330,4 +330,16 @@ In postCard componenet, in outer div:- group: Allows styling of child elements o
 Today,Made DashComments to show all the comments to the admin which is similar to 
 how DashUser componenet is.And made api route for getComments.
 
+Now,Made DashBoardComp for dashboard to show about recent post,user,comments,etc.
+We use useEffect to render when component mounts or currentUser changes.
+
+JSX Rendering :- Render a main container div with a flex layout.
+                Display three cards for Total Users, Total Comments, and Total Posts, 
+                each with an icon and statistics.
+
+                Render three tables for recent users, comments, and posts, each with a 
+                header and dynamically generated rows from the state.
+
+                Include buttons to navigate to detailed views for each section.
+
 ---------------------------------------------------------------------------------------------------
