@@ -365,3 +365,38 @@ Uses the current number of posts as the startIndex for pagination.
 >>>>>>> d11912c0a04341f71329b422a8870bb9e107fdf4
 
 Now, completed the working of About and Project page.
+
+Here, in package.json , scripts, we are building "build" which means :- 
+This script is typically used in a full-stack JavaScript project where the server and client codebases are managed separately within the same repository.
+Installs server-side dependencies from the root package.json.
+Installs client-side dependencies from the client/package.json.
+Runs the build process for the client-side application, which usually involves compiling React or other front-end code into static files that can be served by the server.
+
+In Index.js, path.resolve() returns the absolute path of the directory from where the script is being executed.
+__dirname is a constant that holds the absolute path of the root directory of your project. express.static is a built-in middleware function in Express. 
+It serves static files such as HTML, CSS, JavaScript, and images.
+path.join(__dirname, '/client/dist') constructs the absolute path to the dist directory inside the client folder.
+ app.get('*', (req, res)) The * wildcard matches any route that hasn't been matched by previous route handlers.
+ path.join(__dirname, 'client', 'dist', 'index.html') constructs the absolute path to the index.html file inside the client/dist directory.
+
+ Static assets (like CSS, JS, and images) are served from the client/dist directory.
+The index.html file is served for all routes, allowing the front-end router (like React Router) to handle the routing.
+
+How actually it looks like,
+project-root/
+│
+├── client/
+│   ├── dist/
+│   │   ├── index.html
+│   │   ├── main.js
+│   │   └── styles.css
+│   └── ... (other client files and folders)
+│
+├── server/
+│   ├── index.js (your Express server file)
+│   └── ... (other server files and folders)
+│
+├── package.json
+└── ... (other root files and folders)
+
+--------------------------------------------------------------------------------------------------------------------------------
