@@ -363,3 +363,5 @@ Uses the current number of posts as the startIndex for pagination.
 =======
 ---------------------------------------------------------------------------------------------------
 >>>>>>> d11912c0a04341f71329b422a8870bb9e107fdf4
+
+Now, completed the working of About and Project page.
