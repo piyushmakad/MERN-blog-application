@@ -344,6 +344,7 @@ JSX Rendering :- Render a main container div with a flex layout.
 
 Now,completed Home Page functionality mostly work on frontend using div and all.
 
+<<<<<<< HEAD
 ---------------------------------------------------------------------------------------------------
 
 Today, we work on search funcitonality of Header componenet. In this,useLocation is used to get the current URL path.
@@ -359,3 +360,6 @@ handleShowMore fetches more posts and appends them to the existing list.
 Uses the current number of posts as the startIndex for pagination.
 
 --------------------------------------------------------------------------------------------------------------------
+=======
+---------------------------------------------------------------------------------------------------
+>>>>>>> d11912c0a04341f71329b422a8870bb9e107fdf4
